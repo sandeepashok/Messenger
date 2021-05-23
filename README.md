@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1>Messenger 💬</h1>
+<h1 align="center" >Messenger 💬</h1>
 
 <div align="center">
   <h3>
@@ -15,7 +15,7 @@
 
 ## Overview
 
-![screenshot](capture.png)
+align="center" ![screenshot](capture.png)
 
 ### About
 
