@@ -19,8 +19,6 @@
   <img src="capture.png"/>
 </p>
 
-align="center" ![screenshot](capture.png)
-
 ### About
 
   This is a Real-time chat app.
