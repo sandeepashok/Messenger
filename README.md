@@ -15,6 +15,10 @@
 
 ## Overview
 
+<p align="center">
+  <img src="capture.png"/>
+</p>
+
 align="center" ![screenshot](capture.png)
 
 ### About
