@@ -13,7 +13,7 @@
 
 <!-- OVERVIEW -->
 
-## Overview
+<h2 align="center" >Overview</h2>
 
 <p align="center">
   <img src="capture.png"/>
