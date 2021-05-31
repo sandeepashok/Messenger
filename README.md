@@ -21,7 +21,7 @@
 
 ### About
 
-  This is a Real-time chat app.
+  This is a Real-time chat app called "Messenger", where users can login and participate in the group chat. 
 
 ### Built With
 
