@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Messenger 💬</h1>
+<h1 align="center" >Messenger💬</h1>
 
 <div align="center">
   <h3>
@@ -13,13 +13,15 @@
 
 <!-- OVERVIEW -->
 
-## Overview
+<h2 align="center" >Overview</h2>
 
-![screenshot](capture.png)
+<p align="center">
+  <img src="capture.png"/>
+</p>
 
 ### About
 
-  This is a Real-time chat app.
+  This is a Real-time chat app called "Messenger", where users can login and participate in the group chat. 
 
 ### Built With
 
