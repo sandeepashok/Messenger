@@ -10,14 +10,16 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Button from '@material-ui/core/Button';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
 
-firebase.initializeApp({
+const config = {
   apiKey: "AIzaSyBo7VzdNLDiykNRT7j4uOde0gK_SpPPIFM",
   authDomain: "chatapp-d7dc1.firebaseapp.com",
   projectId: "chatapp-d7dc1",
   storageBucket: "chatapp-d7dc1.appspot.com",
   messagingSenderId: "114673445166",
   appId: "1:114673445166:web:e5b82a473482f3922bf2bf"
-})
+}
+
+firebase.initializeApp(config)
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -58,11 +60,21 @@ const SignIn = () => {
 
   }
   return (
-    <div className='signin-page'>
-      <h1>Sign In Here to Join Chat </h1>
-      <Button color="primary" variant='outlined' onClick={signInWithGoogle}>Sign In</Button>
-    </div>
+    <div className='signin-container'>
+      <div className='signin-page'>
 
+        <img src='https://image.flaticon.com/icons/png/512/561/561241.png' alt='messenger-icon' className='brand-logo' />
+
+        <h1>Messenger</h1>
+
+        <h4>Sign In with Google and join the group chat to build your network and connections.</h4>
+
+        <Button color="primary" variant='outlined' onClick={signInWithGoogle} className='signin-btn'>
+          <img src='https://image.flaticon.com/icons/png/512/2702/2702602.png' alt='google-img' className='google-img' />
+          <span className='btn-name'>signin</span>
+        </Button>
+      </div>
+    </div>
   )
 }
 
@@ -142,7 +154,7 @@ const ChatMessage = ({ message }) => {
   return (
     <div className={`message ${messageClass}`}>
 
-      <img alt='img' src={photoURL} />
+      <img alt='img' className='profile-pic' src={photoURL} />
 
       <p>{text}</p>
 

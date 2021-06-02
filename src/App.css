@@ -127,12 +127,63 @@ button {
   margin: 0 auto;
 }
 
+.signin-container {
+  margin: auto;
+  width: 40%;
+  margin-top: 10rem;
+  max-width: 100vh;
+}
+
 .signin-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 50vh;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.signin-page h1 {
+  color: #424242;
+}
+
+.signin-page h4 {
+  color: #2c2c2c;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.signin-btn {
+  font-size: 16px !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  font-weight: bold !important;
+  margin: 1rem !important;
+}
+
+.btn-name {
+  margin-top: 2px;
+}
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 1rem;
+}
+
+.google-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
 }
 
 ul,
@@ -177,7 +228,7 @@ p {
   align-items: flex-end;
 }
 
-img {
+.profile-pic {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -185,7 +236,7 @@ img {
   display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .App header {
     height: 4rem;
   }
@@ -210,4 +261,15 @@ img {
     top: 0.18rem;
     left: 7.2rem;
   }
+
+  .signin-container {
+    margin: auto;
+    margin-top: 9rem;
+    width: 85%;
+  }
+
+  .signin-page h4 {
+    font-size: 15px;
+  }
+
 }
