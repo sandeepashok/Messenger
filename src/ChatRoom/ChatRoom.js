@@ -1,27 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { firebase, firestore, auth } from '../firebase';
+import firebaseFunctions from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import Button from '@material-ui/core/Button';
 
 export default function ChatRoom() {
 
-  const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const { collection, firestore, orderBy, query, addDoc } = firebaseFunctions
 
-  const [messages] = useCollectionData(query, { idField: 'id' });
+  const messagesRef = collection(firestore, 'messages');
+  // const query = messagesRef.orderBy('createdAt').limit(25);
+
+  const myQuery = query(messagesRef, orderBy('createdAt'));
+
+  const [messages] = useCollectionData(myQuery, { idField: 'id' });
   const [formValue, setFormValue] = useState('')
 
   const dummy = useRef();
 
   const sendMessage = async (e) => {
     e.preventDefault();
-    const { uid, photoURL } = auth.currentUser
+    const { uid, photoURL } = firebaseFunctions.auth.currentUser
 
     if (formValue !== '') {
-      await messagesRef.add({
+      await addDoc(messagesRef, {
         text: formValue,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdAt: firebaseFunctions.serverTimestamp(),
         uid,
         photoURL
       })

@@ -1,7 +1,7 @@
 //from firebase sdk
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, query, orderBy, serverTimestamp, addDoc } from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const config = {
   apiKey: "AIzaSyBo7VzdNLDiykNRT7j4uOde0gK_SpPPIFM",
@@ -12,10 +12,10 @@ const config = {
   appId: "1:114673445166:web:e5b82a473482f3922bf2bf"
 }
 
-firebase.initializeApp(config)
+const app = initializeApp(config)
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+const auth = getAuth(app);
+const firestore = getFirestore(app);
+const firebaseFunctions = { firestore, auth, GoogleAuthProvider, signInWithPopup, collection, query, orderBy, serverTimestamp, addDoc }
 
-
-export { firebase, firestore, auth }
+export default firebaseFunctions

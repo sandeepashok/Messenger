@@ -2,10 +2,10 @@ import React from 'react'
 import SignIn from '../SignIn/SignIn';
 import ChatRoom from '../ChatRoom/ChatRoom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import firebaseFunctions from '../firebase';
 
 export default function ChatSection() {
-  const [user] = useAuthState(auth)
+  const [user] = useAuthState(firebaseFunctions.auth)
 
   return (
     <section>

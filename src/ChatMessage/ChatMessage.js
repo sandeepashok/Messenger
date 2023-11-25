@@ -1,10 +1,10 @@
 import React from 'react';
-import { auth } from '../firebase';
+import firebaseFunctions from '../firebase';
 
 export default function ChatMessage({ message }) {
 
   const { text, uid, photoURL } = message;
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
+  const messageClass = uid === firebaseFunctions.auth.currentUser.uid ? 'sent' : 'recieved';
 
   return (
     <div className={`message ${messageClass}`}>
